@@ -12,6 +12,9 @@ const today = new Date();
 let date = today.getDate(); 
 let month = today.getMonth();
 let year = today.getFullYear();
+let day = today.getDay();
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var homeList = [];
 var workList = [];
@@ -39,11 +42,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-  res.render("home.ejs", {date, month, year, listItems1: homeList});
+  res.render("home.ejs", {date, month, year, day, monthnames: months, daynames: days, listItems1: homeList});
 });
 
 app.get("/work", (req, res) => {
-  res.render("work.ejs", {date, month, year, listItems2: workList});
+  res.render("work.ejs", {date, month, year, day, monthnames: months, daynames: days, listItems2: workList});
 });
 
 app.post("/adder", (req, res, next) => {
