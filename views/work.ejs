@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<div>
+  <h1>
+    <%= date %>, <%= month %> <%= year %>
+  </h1>
+</div>
+
+<form action="/adder" method="post">
+  <label for="new_content"></label>
+  <input type="text" name="new_content" placeholder="Enter your new todo" autocomplete="off" required>
+  <button type="submit">+</button>
+</form>
+
+<div>
+  <% for(var i = listItems2.length -1; i >= 0; i--){ %>
+    <div class="form-check">
+      <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">
+        <%= listItems2[i] %>
+      </label>
+    </div>
+  <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
