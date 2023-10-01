@@ -55,7 +55,7 @@ app.post("/adder", (req, res, next) => {
   var ItemToBeAdded = req.body[key];
   console.log("ItemToBeAdded = " + ItemToBeAdded);
   if (key == "new_content") {
-    console.log("In work");
+    console.log("In Work");
     workList.push(ItemToBeAdded);
     res.redirect("/work");
     next();

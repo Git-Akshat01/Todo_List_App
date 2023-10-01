@@ -1,83 +1,53 @@
-html,
-body {
-  height: 100%;
+.logo{
+  margin-right: 10px;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
+.list{
+  background-color: paleturquoise;
+  border: 5px dashed red;
 }
 
-header,
-footer {
-  flex: 0 0 auto;
+.date_button{
+  background-color: white;
 }
 
-main {
+.date_button{/*, input[type=text]{*/
+  margin: 100px 0 10px;
+  padding: 10px;
+  font-size: 28px;
   text-align: center;
-  padding: 5vmin;
-  flex: 1 0 auto;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  border: 3px solid black;
+  border-radius: 12px;
 }
 
-h1 {
-  text-align: center;
+.date_button:hover{
+  cursor: none;
 }
 
-p {
-  color: grey;
+/* #todo_input, input[type=text]{
+padding: 10px;
+margin: 10px 0 10px;
+position: relative;
+left: 35%;
+border: 3px solid black;
+border-radius: 12px;
+text-align: center;
+font-size: 16px;
+width: 35%;
+} 
+
+.newtodo{
+  border: 5px dashed greenyellow;
 }
 
-.profile {
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-form {
-  margin-top: 50px;
-}
+input[type=submit]{
+  border: 5px solid purple;
+} */
 
-.feedback-input {
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border: 2px solid #3586ff;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-.feedback-input:focus {
-  border: 2px solid #3586ff;
-}
-
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize: vertical;
-}
-
-[type="submit"] {
-  width: 100%;
-  background: #3586ff;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transition: all 0.3s;
-  margin-top: -4px;
-  font-weight: 700;
-}
-[type="submit"]:hover {
-  background: #3586ff;
+#defaultCheck1:checked{
+  color:blue;
+  text-decoration: line-through;
 }

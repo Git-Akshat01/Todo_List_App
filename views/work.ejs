@@ -1,26 +1,33 @@
-<%- include("partials/header.ejs") %>
+<%- include("partials/header.ejs")  %>
 
-<div>
-  <h1>
-    <%= daynames[day] %>, <%= date %> <%=monthnames[month]%> <%= year %>
-  </h1>
-</div>
+<button class="date_button">
+  <%= daynames[day] %>, <%= date %> <%=monthnames[month]%> <%= year %>
+</button>
 
-<form action="/adder" method="post">
-  <label for="new_content"></label>
-  <input type="text" name="new_content" placeholder="Enter your new todo" autocomplete="off" required>
-  <button type="submit">+</button>
-</form>
-
-<div>
-  <% for(var i = listItems2.length -1; i >= 0; i--){ %>
-    <div class="form-check">
-      <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1">
-      <label class="form-check-label" for="defaultCheck1">
-        <%= listItems2[i] %>
-      </label>
+<div class="container d-flex justify-content-center mt-3 mb-3">
+  <form class="row row-cols-lg-auto g-3 align-items-center" action="/adder" method="post">
+    <div class="col-12">
+      <label class="visually-hidden" for="inlineFormInputGroupUsername">Create New todo</label>
+      <div class="input-group">
+        <div class="input-group-text"><img src="images/list-task.svg" alt="list-task"></div>
+        <input type="text" name="new_content" class="form-control" id="inlineFormInputGroupUsername" placeholder="Enter your new todo" required>
+      </div>
     </div>
-  <% } %>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
 </div>
+  
+<% for(var i = listItems2.length -1; i >= 0; i--){ %>
+  <div class="container d-flex justify-content-center mt-3 mb-3">
+    <input class="checkbox mx-2" type="checkbox" id="defaultCheck1">
+    <label for="defaultCheck1">
+      <%= listItems2[i] %>
+    </label>
+  </div>
+<% } %>
+  
 
 <%- include("partials/footer.ejs") %>

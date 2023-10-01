@@ -1,26 +1,51 @@
 <%- include("partials/header.ejs") %>
 
-<div>
-  <h1>
-    <%= daynames[day] %>, <%= date %> <%=monthnames[month]%> <%= year %>
-  </h1>
-</div>
+<button class="date_button">
+  <%= daynames[day] %>, <%= date %> <%=monthnames[month]%> <%= year %>
+</button>
 
-<form action="/adder" method="post">
-  <label for="new_content"></label>
-  <input type="text" name="new_content2" placeholder="Enter your new todo" autocomplete="off" required>
-  <button type="submit">+</button>
-</form>
-
-<div>
-  <% for(var i = listItems1.length -1; i >= 0; i--){ %>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-      <label class="form-check-label" for="defaultCheck1">
-        <%= listItems1[i] %>
-      </label>
+<div class="container d-flex justify-content-center mt-3 mb-3">
+  <form class="row row-cols-lg-auto g-3 align-items-center" action="/adder" method="post">
+    <div class="col-12">
+      <label class="visually-hidden" for="inlineFormInputGroupUsername">Create New todo</label>
+      <div class="input-group">
+        <div class="input-group-text"><img src="images/list-task.svg" alt="list-task"></div>
+        <input type="text" name="new_content2" class="form-control" id="inlineFormInputGroupnewtodo" placeholder="Enter your new todo" required>
+      </div>
     </div>
-  <% } %>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
 </div>
+
+<% for(var i = listItems1.length -1; i >= 0; i--){ %>
+    <div class="container d-flex justify-content-center mt-3 mb-3">
+    <input class="checkbox mx-2" type="checkbox" id="defaultCheck1" onclick="myFunction()">
+    <label for="defaultCheck1" id="checkboxlabel">
+      <%= listItems1[i] %>
+    </label>
+  </div>
+<% } %>
+
+<!-- <script>
+  $(document).on("onclick", function(){
+    console.log("Inside oooooooooooooooooo");
+    $(".checkboxlabel").css("text-decoration", "line-through");
+  });
+</script> -->
+
+<script>
+  function myFunction() {
+    var checkBox = document.getElementById("defaultCheck1");
+    var text = document.getElementById("checkboxlabel");
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+  }
+</script>
 
 <%- include("partials/footer.ejs") %>
